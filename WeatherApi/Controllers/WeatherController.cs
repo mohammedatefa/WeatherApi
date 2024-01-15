@@ -47,7 +47,7 @@ namespace WeatherApi.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsStringAsync();
+                     var result = await response.Content.ReadAsStringAsync();
                     var resualtToJSON = JObject.Parse(result);
                     string? state = resualtToJSON["features"]?[0]?["properties"]?["state"]?.ToString();
                     return await GetWeather(state);
@@ -61,6 +61,7 @@ namespace WeatherApi.Controllers
                 return BadRequest($"Error => {ex.Message}");
             }
         }
+       
 
     }
 }

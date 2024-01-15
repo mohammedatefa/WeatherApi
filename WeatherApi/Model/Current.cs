@@ -2,6 +2,7 @@
 {
     public class Current
     {
+        public int Id { get; set; }
         public double temp_c { get; set; }
         public double temp_f { get; set;}
         public int is_day { get; set; }
